@@ -1,7 +1,6 @@
 C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\bin\Debug\rakutenmpc.exe.config
 C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\bin\Debug\rakutenmpc.exe
 C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\bin\Debug\rakutenmpc.pdb
-C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\obj\Debug\rakutenmpc.csprojResolveAssemblyReference.cache
 C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\obj\Debug\rakutenmpc.exe
 C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\obj\Debug\rakutenmpc.pdb
 C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\bin\Debug\rakutenmpc.exe.manifest

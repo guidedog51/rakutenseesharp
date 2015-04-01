@@ -9,8 +9,8 @@ namespace rakutenmpc
     class Program
     {
 
-        enum Validation {tests, firstoccurence, reversestring};
-        string inputBuffer;
+        enum DemoType {tests, firstoccurence, reversestring};
+        static string inputBuffer, searchBuffer, reverseBuffer;
 
         static void Main(string[] args)
         {
@@ -40,9 +40,33 @@ namespace rakutenmpc
             }
         }
 
-        static void FirstOccurence()
+        static void ContinueMenu(DemoType which = DemoType.firstoccurence)
         {
-            Console.WriteLine("You chose First Occurence");
+            Console.WriteLine("Press r to repeat");
+            Console.WriteLine("Press m for main menu, or");
+            Console.WriteLine("Press any other key to quit.");
+
+            ConsoleKeyInfo cki = Console.ReadKey(true);
+            switch (cki.Key.ToString().ToLower())
+            {
+                case "r":
+                    if (which == DemoType.firstoccurence)
+                        FirstOccurence(true);
+                    else
+                        ReverseAString(true);
+                    break;
+                case "m":
+                    Menu();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        static void FirstOccurence(bool skipChoice = false)
+        {
+            if (!skipChoice)
+                Console.WriteLine("You chose First Occurence");
             Console.WriteLine("Enter an integer between 0 and 999,999,999 or");
             Console.WriteLine("Press r to generate one.");
 
@@ -52,60 +76,127 @@ namespace rakutenmpc
             {
                 case "r":
                     Random rnd = new Random();
-                    var val = rnd.Next(0, 999999999).ToString();
-                    Console.WriteLine(string.Format("You entered {0}", val));
-                    int ret = GetFirstOccurence();
-                    Console.WriteLine(string.Format("Search string occurs at position {0}", ret));
-
-                    Console.WriteLine("Press r to repeat");
-                    Console.WriteLine("Press m for main menu, or");
-                    Console.WriteLine("Press any other key to quit.");
-
-                    cki = Console.ReadKey(true);
-                    switch (cki.Key.ToString().ToLower())
+                    inputBuffer = rnd.Next(0, 999999999).ToString();
+                    Console.WriteLine(string.Format("You entered {0}", inputBuffer));
+                    break;
+                default:
+                    inputBuffer = Console.ReadLine();
+                    string res = ValidateInput(DemoType.firstoccurence, inputBuffer);
+                    if (res != string.Empty)
                     {
-                        case "r":
-                            FirstOccurence();
-                            break;
-                        case "m":
-                            Menu();
-                            break;
-                        default:
-                            break;
+                        Console.WriteLine(res);
+                        FirstOccurence(true);
                     }
-                        break;
-                    default:
-                        break;
-                }
+                    break;
+            }
+            int ret = GetFirstOccurence();
+
+            string msg = ret < 0 ? "Search string not found" : string.Format("Search string {0} occurs at position {1}: {2}", searchBuffer, ret, getCaretedString(ret));
+            Console.WriteLine(msg);
+
+            ContinueMenu();
         }
 
         static int GetFirstOccurence()
         {
+            int res = 0;
             Console.WriteLine("Now enter a search string:");
-
-            string ret = ValidateInput(Validation.reversestring, Console.ReadLine());
-
-            return 0;
+            searchBuffer = Console.ReadLine();
+            string ret = ValidateInput(DemoType.firstoccurence, searchBuffer);
+            
+            if (ret != string.Empty)
+            {
+                Console.WriteLine(ret);
+                GetFirstOccurence();
+            }
+            
+            //search for the occurence
+            res = inputBuffer.IndexOf(searchBuffer);
+            return res;
         }
-        static int GetReverseString()
+
+        static void ReverseAString(bool skipTitle = false)
         {
-            Console.WriteLine("Now enter a search string:");
+            if (!skipTitle)
+                Console.WriteLine("You chose Reverse A String");
+            Console.WriteLine("Enter a string to reverse");
 
-            string ret = ValidateInput(Validation.reversestring, Console.ReadLine());
+            //ConsoleKeyInfo cki = Console.ReadKey(true);
+            Console.WriteLine(GetReverseString());
 
-            return 0;
+            ContinueMenu(DemoType.reversestring);
         }
 
-        static void ReverseAString()
+        static string GetReverseString()
         {
-            Console.WriteLine("You chose Reverse A String");
-            ConsoleKeyInfo cki = Console.ReadKey(true);
+            reverseBuffer = Console.ReadLine();
+            string ret = ValidateInput(DemoType.reversestring, reverseBuffer);
+
+            if (ret != string.Empty)
+            {
+                Console.WriteLine(ret);
+                GetReverseString();
+            }
+
+            return new string(reverseBuffer.ToCharArray().Reverse().ToArray());
         }
 
-        static string ValidateInput(Validation what, string input)
+        static string ValidateInput(DemoType what, string input)
         {
             var ret = string.Empty;
+
+            switch (what)
+            {
+                case DemoType.tests:
+                    break;
+                case DemoType.firstoccurence:
+                    if (input.Substring(0, 1).Equals("0"))
+                    {    
+                        ret = string.Format("Invalid input. {0} has lead zero.  Lead zeros not allowed.", input);
+                        break;
+                    }
+                    if (!isPositiveInteger(input))
+                    {
+                        ret = string.Format("Invalid input. {0} is not a positive integer.", input);
+                        break;
+                    }
+                    if (Int64.Parse(input) > 999999999)
+                    {
+                        ret = string.Format("Invalid input. {0} is greater than 999,999,999.", input);
+                    }
+                    break;
+                case DemoType.reversestring:
+                    if (input.Length > 200000)
+                        ret = string.Format("Invalid input.  Length of string exceeds 200,000.");
+                    break;
+                default:
+                    break;
+            }
+            
             return ret;
+        }
+
+        static bool isPositiveInteger(string input) {
+            bool ret = false;
+            long res = 0;
+            if (Int64.TryParse(input, out res))
+            {
+                if (res > -1)
+                    return true;
+            }
+
+            return ret;
+        }
+
+        static string getCaretedString(int index) {
+            int len = searchBuffer.Length;
+            StringBuilder sb = new StringBuilder();
+            sb.Append(inputBuffer.Substring(0, index));
+            sb.Append("^");
+            sb.Append(searchBuffer + "^");
+            sb.Append(inputBuffer.Substring(index + len));
+
+            return sb.ToString();
         }
     }
 }
