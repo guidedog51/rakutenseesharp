@@ -1,0 +1,9 @@
+C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\bin\Release\rakutenmpc.exe.config
+C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\bin\Release\rakutenmpc.exe.manifest
+C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\bin\Release\rakutenmpc.application
+C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\bin\Release\rakutenmpc.exe
+C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\bin\Release\rakutenmpc.pdb
+C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\obj\Release\rakutenmpc.exe.manifest
+C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\obj\Release\rakutenmpc.application
+C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\obj\Release\rakutenmpc.exe
+C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\obj\Release\rakutenmpc.pdb

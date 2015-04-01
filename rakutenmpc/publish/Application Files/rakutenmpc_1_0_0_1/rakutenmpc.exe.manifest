@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="rakutenmpc.exe" version="1.0.0.1" publicKeyToken="27dcc2589a43cc84" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="rakutenmpc" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
+    <commandLine file="rakutenmpc.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="rakutenmpc.exe" size="8192">
+      <assemblyIdentity name="rakutenmpc" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>637PWkL7u4HE1SZ34DdoMx0b8kbqR53qaiQe5n1nv6Y=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="rakutenmpc.exe.config" size="187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=MPC-DELLVHD\Michael Conner" issuerKeyHash="6f80899b34f13d9672dfd6ad34c46d8e8a8d8248" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>mRpVaVJji7m5I8id2RpmHm38PAafk3VVz/nABYaEuAE=</DigestValue></Reference></SignedInfo><SignatureValue>RCw2pdd3tqMLH2zQKG6W95+okJ63Qpf9T0FwmDgYtePm+QQe98gPxABQ/HA7tsnynr5xVYOtylODW19Q0KHXE3HwzH+BwKv7iJqoItqvJLaGRwqSuPw+4r/Kf0MII5Q57HOLFLfIEi0dhW2PPn1++RX0ULvQsOjkzAVXJECqDTU=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>3gCLGRKA68ijkwYnjSoG3FcT7esne0UlvzXiFAEjlGuNGhZjRFcAMJGfyQfrqiKPC12tmfRhQAQuHJVhkjLWpAYINDNnMaob07ttczb59PV74bu/LXjloRAHDMFHKwLilYQrGnqjVi4TUZsdB4zWlbi4ekcrUnsx/Lkjt8myBwk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="01b8848605c0f9cf5575939f063cfc6d1e661ad99dc823b9b98b635269551a99" Description="" Url=""><as:assemblyIdentity name="rakutenmpc.exe" version="1.0.0.1" publicKeyToken="27dcc2589a43cc84" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=MPC-DELLVHD\Michael Conner</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>+I8tHuSNzWYtuRFeUvHOxyEkRBX2XCrxtrkjwMaRQ4Y=</DigestValue></Reference></SignedInfo><SignatureValue>n/aGg4Sp1qn0eENa6xJ3tADb2CtccO7KEYRO/XE9uFZ2JVCdKaGMeiRHxKU7CVMw/rsVsSgZjhXu+IAFnAp9eisNxVqcvjCQyAVzMPqh5VQOI3Z//3zKMdSTWgTBm9bQjKYYgA3bOAkhSPHpUo6iEOtb+upm7OPQiZ008glRa84=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>3gCLGRKA68ijkwYnjSoG3FcT7esne0UlvzXiFAEjlGuNGhZjRFcAMJGfyQfrqiKPC12tmfRhQAQuHJVhkjLWpAYINDNnMaob07ttczb59PV74bu/LXjloRAHDMFHKwLilYQrGnqjVi4TUZsdB4zWlbi4ekcrUnsx/Lkjt8myBwk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICATCCAWqgAwIBAgIQE3P0mjzXXYJAU5f2mDYMozANBgkqhkiG9w0BAQsFADA/MT0wOwYDVQQDHjQATQBQAEMALQBEAEUATABMAFYASABEAFwATQBpAGMAaABhAGUAbAAgAEMAbwBuAG4AZQByMB4XDTE1MDQwMTE3NDg0MFoXDTE2MDMzMTIzNDg0MFowPzE9MDsGA1UEAx40AE0AUABDAC0ARABFAEwATABWAEgARABcAE0AaQBjAGgAYQBlAGwAIABDAG8AbgBuAGUAcjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA3gCLGRKA68ijkwYnjSoG3FcT7esne0UlvzXiFAEjlGuNGhZjRFcAMJGfyQfrqiKPC12tmfRhQAQuHJVhkjLWpAYINDNnMaob07ttczb59PV74bu/LXjloRAHDMFHKwLilYQrGnqjVi4TUZsdB4zWlbi4ekcrUnsx/Lkjt8myBwkCAwEAATANBgkqhkiG9w0BAQsFAAOBgQBooFGiTe43LlhvzEkJghSnOSVcXkBJFOedpqsN4vdYFmupwglhfUwAoiJe/DpvLd/gEjlWWBNDEhAsngUVch2AUD3rMtjRxURLvuqOco5MqFX3dgJEZ4vM8e4hY+VHIiugwHoCj510TGuG6wONhGsgRA2vPBw+kYbZKY5OGn0Xwg==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
