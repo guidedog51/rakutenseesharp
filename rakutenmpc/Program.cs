@@ -115,7 +115,7 @@ namespace rakutenmpc
             return res;
         }
 
-        static void ReverseAString(bool skipTitle = false)
+        static void ReverseAString(bool skipTitle = false, bool skipContinue = false)
         {
             if (!skipTitle)
                 Console.WriteLine("You chose Reverse A String");
@@ -123,8 +123,8 @@ namespace rakutenmpc
 
             //ConsoleKeyInfo cki = Console.ReadKey(true);
             Console.WriteLine(GetReverseString());
-
-            ContinueMenu(DemoType.reversestring);
+            if (!skipContinue)
+                ContinueMenu(DemoType.reversestring);
         }
 
         static string GetReverseString()
@@ -135,7 +135,8 @@ namespace rakutenmpc
             if (ret != string.Empty)
             {
                 Console.WriteLine(ret);
-                GetReverseString();
+                ReverseAString(true, true);
+                return string.Empty;
             }
 
             return new string(reverseBuffer.ToCharArray().Reverse().ToArray());
