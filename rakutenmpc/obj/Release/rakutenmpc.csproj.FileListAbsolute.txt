@@ -7,3 +7,4 @@ C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\obj\Release\rakutenmp
 C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\obj\Release\rakutenmpc.application
 C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\obj\Release\rakutenmpc.exe
 C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\obj\Release\rakutenmpc.pdb
+C:\Users\Michael Conner\Source\Repos\rakutenmpc\rakutenmpc\obj\Release\rakutenmpc.csprojResolveAssemblyReference.cache
